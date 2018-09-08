@@ -4,7 +4,7 @@ from datetime import datetime
 class Schools(models.Model):
     name=models.CharField(max_length=100)
     address=models.CharField(max_length=100)
-    email=models.EmailField(max_length=100)
+    email=models.EmailField()
     created_at=models.DateTimeField(default=datetime.now,blank=True)
     class Meta:
         db_table="school_schools"

@@ -1,15 +1,6 @@
 {% extends 'index.html' %}
-{% load static %}
-{% block javaextra} 
-<script src="../../static/js/popper.min.js"></script>
-<script src=" ../../static/js/bootstrap.min.js"></script>
-<% endblock %}
-{% block extra_css %}
-<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
-<!-- Custom styles for this template -->
-<link href=" ../../static/assets/style.css" rel="stylesheet ">
-<link type="text/css" rel="stylesheet" href=" ../../static/css/font-awesome.min.css "> 
-{% endblock %}
+  {% block extra_js %} 
+   {% endblock %}
 {% block content %}
   <table class="table" id="book-table">
     <thead>
@@ -43,13 +34,13 @@
           <td>{{ schooldata.wat_l }}</td>
           <td>{{ schooldata.wat_u }}</td>
           <td>         
-            <a href="/school/edit/{{schooldata.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/school/delete/{{ schooldata.id }}">Delete</a>          
+            <a href="/schooldata/edit/{{schooldata.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>  
+            <a href="/schooldata/delete/{{ schooldata.id }}">Delete</a>          
           </td>
         </tr>
        {% empty %}
         <tr>
-          <td colspan="7" class="text-center bg-warning"></td>
+          <td colspan="11" class="text-center bg-warning"></td>
         </tr>
       {% endfor %}
     </tbody>
