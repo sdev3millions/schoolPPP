@@ -1,16 +1,16 @@
 {% extends 'index.html' %}
 {% load static %}
-{% block javascript %}
-  <!-- <script src="{% static 'books/js/books.js' %}"></script> -->
+{% block extra_css %}
 {% endblock %}
 {% block content %}
-{% endblock %}
-{% block body_content %}
   <table class="table" id="book-table">
     <thead>
       <tr>
         <th>Id</th>
         <th>Name</th>
+        <th>Year</th>
+        <th>Month</th>
+        <th>Week</th>
         <th>Electricity(kWH)</th>
         <th>Electricity(Euro)</th>
         <th>Heating(kWH)</th>
@@ -21,10 +21,13 @@
       </tr>
     </thead>
     <tbody>
-      {% for schooldata in schooldatas %}
+       {% for schooldata in schooldatas %}
          <tr>
           <td>{{ schooldata.id }}</td>
           <td>{{ schooldata.school_id }}</td>
+          <td>{{ schooldata.year }}</td>
+          <td>{{ schooldata.month }}</td>
+          <td>{{ schooldata.week }}</td>
           <td>{{ schooldata.ele_k }}</td>
           <td>{{ schooldata.ele_u }}</td>
           <td>{{ schooldata.hea_k }}</td>
@@ -32,8 +35,8 @@
           <td>{{ schooldata.wat_l }}</td>
           <td>{{ schooldata.wat_u }}</td>
           <td>         
-            <a href="/edit/{{ schooldata.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
-            <a href="/delete/{{ schooldata.id }}">Delete</a>          
+            <a href="/school/edit/{{schooldata.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/school/delete/{{ schooldata.id }}">Delete</a>          
           </td>
         </tr>
        {% empty %}
