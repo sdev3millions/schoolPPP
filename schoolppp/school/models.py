@@ -6,9 +6,9 @@ class Schools(models.Model):
     address=models.CharField(max_length=100)
     email=models.EmailField(max_length=100)
     class Meta:
-        db_table="schools"
+        db_table="school_schools"
 class SchoolData(models.Model):
-    school_id=models.IntegerField(max_length=100)
+    school_id=models.IntegerField()
     ele_k=models.IntegerField()
     ele_u=models.IntegerField()
     hea_k=models.IntegerField()
@@ -16,6 +16,6 @@ class SchoolData(models.Model):
     wat_l=models.IntegerField()
     wat_u=models.IntegerField()
     class Meta:
-        db_table="schooldata"
+        db_table="school_schooldata"
     
     

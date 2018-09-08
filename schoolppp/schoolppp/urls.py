@@ -18,6 +18,6 @@ from django.urls import path
 from school import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('school',views.home),
-    path('books/$',views.school_list, name='school_list'),   
+    path('',views.home),
+    path('school/show',views.school_list, name='school_list'),
 ]
