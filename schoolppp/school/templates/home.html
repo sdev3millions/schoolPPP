@@ -1,8 +1,29 @@
 {% extends 'index.html' %}
-  {% block extra_js %} 
-   {% endblock %}
+{% block extra_js %} 
+{% endblock %}
 {% block content %}
-  <table class="table" id="book-table">
+  <table class="table" id="school-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Email</th>       
+        {% comment %} <th>Action</th> {% endcomment %}
+      </tr>
+    </thead>
+    <tbody>
+       {% for school in schools %}
+         <tr>
+          <td>{{ school.id }}</td>
+          <td>{{ school.name }}</td>
+          <td>{{ school.address }}</td>
+          <td>{{ school.email }}</td>       
+        </tr> 
+        {% endfor %}    
+    </tbody>
+  </table>
+  <table class="table" id="school-table">
     <thead>
       <tr>
         <th>Id</th>
@@ -16,14 +37,14 @@
         <th>Heating(Euro)</th>
         <th>Water(Litures)</th>
         <th>Water(Euro)</th>
-        <th>Action</th>
+        {% comment %} <th>Action</th> {% endcomment %}
       </tr>
     </thead>
     <tbody>
        {% for schooldata in schooldatas %}
          <tr>
           <td>{{ schooldata.id }}</td>
-          <td>{{ schooldata.school_id}}</td>
+          {% comment %} <td>{{ schooldata.school }}</td> {% endcomment %}
           <td>{{ schooldata.year }}</td>
           <td>{{ schooldata.month }}</td>
           <td>{{ schooldata.week }}</td>
@@ -33,16 +54,8 @@
           <td>{{ schooldata.hea_u }}</td>
           <td>{{ schooldata.wat_l }}</td>
           <td>{{ schooldata.wat_u }}</td>
-          <td>         
-            <a href="/schooldata/edit/{{schooldata.id }}"><span class="glyphicon glyphicon-pencil">Edit</span></a>  
-            <a href="/schooldata/delete/{{ schooldata.id }}">Delete</a>          
-          </td>
-        </tr>
-       {% empty %}
-        <tr>
-          <td colspan="11" class="text-center bg-warning"></td>
-        </tr>
-      {% endfor %}
+          </tr>
+        {% endfor %}     
     </tbody>
   </table>
 {% endblock %}

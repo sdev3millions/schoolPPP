@@ -8,10 +8,20 @@
     <div class="container">
       <br>
       <div class="form-group row">
-        <label class="col-sm-1 col-form-label"></label>
-        <div class="col-sm-4">
-          <h3>School Data{{ schooldata.id}} </h3>
-        </div>
+        <label class="col-sm-2 col-form-label">Name:</label>
+        <div class="form-group">
+			<select class="form-control">
+				{% comment %} @foreach($schools as $school) {% endcomment %}
+					{% comment %} @if($school->id == $sc_id) {% endcomment %}
+						<option selected="selected">{{ $school->sc_name }}</option>
+					{% comment %} @else {% endcomment %}
+						<option>{{ $school->sc_name }}</option>
+					{% comment %} @endif {% endcomment %}
+				{% comment %} @endforeach {% endcomment %}
+				</select>
+			</div>
+        {% comment %} <input type="text" name="year" id="id_year" onchange="" required maxlength="100" value="{{ schooldata.year }}" /> {% endcomment %}
+     
       </div>
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Year:</label>

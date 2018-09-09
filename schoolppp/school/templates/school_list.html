@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block extra_js %}
+{% endblock %}
+{% block content %}
+<br>
+<br>
+<a href="/school/add" class="btn btn-primary">Add School</a>
+<table class="table" id="school-table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>   
+            <th>Action</th>       
+        </tr>
+    </thead>
+    <tbody>
+        {% for school in schools %}
+        <tr>
+            <td>{{ school.id }}</td>
+            <td>{{ school.name}}</td>
+            <td>{{ school.email }}</td>
+            <td>{{ school.address }}</td>
+            <td>
+                <a href="/school/edit/{{school.id }}" class="fa fa-pencil"><span class="glyphicon glyphicon-pencil">Edit</span></a>
+                <a href="/school/delete/{{ school.id }}" class="fa fa-close">Delete</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="11" class="text-center bg-warning"></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

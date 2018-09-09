@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'schoolppp.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 # Database Setting
 DATABASES = {
-    'default': {
+        'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'schooldb',
         'USER': 'root',

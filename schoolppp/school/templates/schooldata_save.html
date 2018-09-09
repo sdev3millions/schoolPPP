@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+{% block extra_js %} 
+   <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">	<!-- Font Awesome -->
+	<link href="css/font-awesome.min.css" rel="stylesheet">	<!-- Pace -->
+	<link href="css/pace.css" rel="stylesheet">	<!-- Perfect -->
+	<link href="css/app.min.css" rel="stylesheet">
+	<link href="css/app-skin.css" rel="stylesheet">
+{% endblock %}
+{% block content %}
+   <div id="main-container">
+ 	  <div class="padding-md">
+          <div class="col-md-6">
+            <div class="col-md-6">
+						<div class="panel panel-default">
+							<form class="form-control" method="POST" action="/schooldata_create/" novalidate>{% csrf_token %}
+								<div class="panel-heading">
+									Validation Example1
+								</div>
+								<div class="panel-body">
+									<div class="form-group">
+										<label class="control-label">Schoolname</label>
+										<input type="text" placeholder="Username" class="form-control input-sm parsley-validated" data-required="true" data-minlength="8" value={{ schooldata.name }}>
+									</div><!-- /form-group -->
+										
+									<div class="row">
+										<div class="col-md-4">
+											<div class="form-group">
+												<label class="control-label">Password</label>
+												<input type="password" placeholder="Password" class="form-control input-sm parsley-validated" id="password" data-required="true" data-minlength="8">
+											</div><!-- /form-group -->
+										</div><!-- /.col -->
+										<div class="col-md-4">
+											<div class="form-group">
+												<label class="control-label">Confirm Password</label>
+												<input type="password" placeholder="Confirm Password" class="form-control input-sm parsley-validated" data-equalto="#password" data-required="true">
+											</div><!-- /form-group -->
+										</div><!-- /.col -->
+                                        <div class="col-md-4">
+											<div class="form-group">
+												<label class="control-label">Confirm Password</label>
+												<input type="password" placeholder="Confirm Password" class="form-control input-sm parsley-validated" data-equalto="#password" data-required="true">
+											</div><!-- /form-group -->
+										</div>
+									</div><!-- /.row -->	
+
+									<div class="form-group">
+										<label class="control-label">Water(kWH)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Electricity(kWH)" data-required="true"  value="eke_k">
+									</div><!-- /form-group -->
+
+                                    <div class="form-group">
+										<label class="control-label">Eelectricity(Euro)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Electricity(Euro)" data-required="true"  value="eke_u">
+									</div><!-- /form-group -->
+                                	<div class="form-group">
+										<label class="control-label">Heating(kWH)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Heating(kWH)" data-required="true"  value="hea_k">
+									</div><!-- /form-group -->
+                                    <div class="form-group">
+										<label class="control-label">Heating(Euro)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Heating(Euro)" data-required="true"  value="hea_u">
+									</div><!-- /form-group -->
+                                    <div class="form-group">
+										<label class="control-label">Water(Litres)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Water(kWH)" data-required="true"  value="wat_l">
+									</div><!-- /form-group -->
+                                    <div class="form-group">
+										<label class="control-label">Water(Euro)</label>
+										<input type="text" class="form-control input-sm parsley-validated" placeholder="Water(Euro)" data-required="true"  value="wat_u">
+									</div><!-- /form-group -->		
+									<div class="panel-footer text-right">
+									<button type="submit" class="btn btn-success">Ceate</button>
+								</div>
+						  	</form>						     
+						</div><!-- /panel -->
+				 </div><!-- /.col-->
+           </div>
+       </div> 
+   </div>
+{% endblock %}
